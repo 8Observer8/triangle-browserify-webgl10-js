@@ -1,0 +1,22 @@
+{
+  "name": "triangle-browserify-webgl10-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clear": "del /f /q /s .\\public\\js\\*.*",
+    "del-bundle": "del /f /q /s .\\src\\bundle.js",
+    "bundle-debug": "browserify --debug src/main.js -o public/js/bundle.js",
+    "bundle-release": "browserify src/main.js -o src/bundle.js",
+    "uglify": "uglifyjs src/bundle.js -o public/js/bundle.min.js",
+    "debug": "npm run bundle-debug",
+    "release": "npm run clear && npm run bundle-release && npm run uglify && npm run del-bundle"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gl-matrix": "^3.3.0"
+  }
+}
